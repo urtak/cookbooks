@@ -90,7 +90,7 @@ template "nginx.conf" do
   notifies :restart, resources(:service => "nginx"), :immediately
 end
 
-cookbook_file "#{node[:nginx][:dir]}/mime.types" do
+remote_file "#{node[:nginx][:dir]}/mime.types" do
   source "mime.types"
   owner "root"
   group "root"
