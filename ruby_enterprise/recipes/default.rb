@@ -40,7 +40,7 @@ bash "Install Ruby Enterprise Edition" do
   tar zxf ruby-enterprise-#{node[:ruby_enterprise][:version]}.tar.gz
   ruby-enterprise-#{node[:ruby_enterprise][:version]}/installer \
     --auto=#{node[:ruby_enterprise][:install_path]} \
-    --dont-install-useful-gems
+    --no-dev-docs
   EOH
   not_if do
     ::File.exists?("#{node[:ruby_enterprise][:install_path]}/bin/ree-version") &&
