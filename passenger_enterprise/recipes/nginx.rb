@@ -38,7 +38,7 @@ execute "passenger_nginx_module" do
       --extra-configure-flags='#{configure_flags}'
   }
   not_if "#{nginx_install}/sbin/nginx -V 2>&1 | grep '#{node[:ruby_enterprise][:gems_dir]}/gems/passenger-#{node[:passenger_enterprise][:version]}/ext/nginx'"
-  notifies :restart, resources(:service => "nginx")
+  notifies :restart, resources(:service => "nginx"), :immediately
 end
 
 template "#{nginx_dir}/conf.d/passenger.conf" do
@@ -46,5 +46,5 @@ template "#{nginx_dir}/conf.d/passenger.conf" do
   owner "root"
   group "root"
   mode "0644"
-  notifies :restart, resources(:service => "nginx")
+  notifies :restart, resources(:service => "nginx"), :immediately
 end
