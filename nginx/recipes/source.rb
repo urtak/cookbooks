@@ -60,9 +60,10 @@ end
 
 runit_service "nginx"
 
-service "nginx" do
-  subscribes :restart, resources(:bash => "compile_nginx_source")
-end
+# Don't start right after compilation... write the nginx.conf first.
+# service "nginx" do
+#   subscribes :restart, resources(:bash => "compile_nginx_source")
+# end
 
 %w{ sites-available sites-enabled conf.d }.each do |dir|
   directory "#{node[:nginx][:dir]}/#{dir}" do
