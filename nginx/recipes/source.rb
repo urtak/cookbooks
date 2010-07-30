@@ -58,12 +58,6 @@ directory node[:nginx][:dir] do
   mode "0755"
 end
 
-# runit_service "nginx"
-
-service "nginx" do
-  subscribes :restart, resources(:bash => "compile_nginx_source"), :delayed
-end
-
 %w{ sites-available sites-enabled conf.d }.each do |dir|
   directory "#{node[:nginx][:dir]}/#{dir}" do
     owner "root"
@@ -96,4 +90,10 @@ remote_file "#{node[:nginx][:dir]}/mime.types" do
   group "root"
   mode "0644"
   notifies :restart, resources(:service => "nginx")
+end
+
+runit_service "nginx"
+
+service "nginx" do
+  subscribes :restart, resources(:bash => "compile_nginx_source"), :delayed
 end
