@@ -22,29 +22,16 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-include_recipe "nginx::source"
 include_recipe "passenger_enterprise"
 
-configure_flags = node[:nginx][:configure_flags].join(" ")
-nginx_install = node[:nginx][:install_path]
-nginx_version = node[:nginx][:version]
-nginx_dir = node[:nginx][:dir]
+node.set[:nginx][:configure_flags] = node[:nginx][:configure_flags] + ["--add-module=#{node[:ruby_enterprise][:gems_dir]}/gems/passenger-#{node[:passenger_enterprise][:version]}/ext/nginx"]
 
-execute "passenger_nginx_module" do
-  command %Q{
-    #{node[:ruby_enterprise][:install_path]}/bin/passenger-install-nginx-module \
-      --auto --prefix=#{nginx_install} \
-      --nginx-source-dir=/tmp/nginx-#{nginx_version} \
-      --extra-configure-flags='#{configure_flags}'
-  }
-  not_if "#{nginx_install}/sbin/nginx -V 2>&1 | grep '#{node[:ruby_enterprise][:gems_dir]}/gems/passenger-#{node[:passenger_enterprise][:version]}/ext/nginx'"
-  notifies :restart, resources(:service => "nginx"), :immediately
-end
+include_recipe "nginx::source"
 
-template "#{nginx_dir}/conf.d/passenger.conf" do
+template "#{node[:nginx][:dir]}/conf.d/passenger.conf" do
   source "passenger_nginx.conf.erb"
   owner "root"
   group "root"
   mode "0644"
-  notifies :restart, resources(:service => "nginx"), :immediately
+  notifies :restart, resources(:service => "nginx")
 end

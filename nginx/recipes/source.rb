@@ -60,10 +60,9 @@ end
 
 runit_service "nginx"
 
-# Don't start right after compilation... write the nginx.conf first.
-# service "nginx" do
-#   subscribes :restart, resources(:bash => "compile_nginx_source")
-# end
+service "nginx" do
+  subscribes :restart, resources(:bash => "compile_nginx_source")
+end
 
 %w{ sites-available sites-enabled conf.d }.each do |dir|
   directory "#{node[:nginx][:dir]}/#{dir}" do
@@ -88,7 +87,7 @@ template "nginx.conf" do
   owner "root"
   group "root"
   mode "0644"
-  notifies :restart, resources(:service => "nginx"), :immediately
+  notifies :restart, resources(:service => "nginx")
 end
 
 remote_file "#{node[:nginx][:dir]}/mime.types" do
@@ -96,5 +95,5 @@ remote_file "#{node[:nginx][:dir]}/mime.types" do
   owner "root"
   group "root"
   mode "0644"
-  notifies :restart, resources(:service => "nginx"), :immediately
+  notifies :restart, resources(:service => "nginx")
 end
