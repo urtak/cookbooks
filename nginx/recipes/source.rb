@@ -58,7 +58,7 @@ directory node[:nginx][:dir] do
   mode "0755"
 end
 
-runit_service "nginx"
+# runit_service "nginx"
 
 service "nginx" do
   subscribes :restart, resources(:bash => "compile_nginx_source"), :delayed
