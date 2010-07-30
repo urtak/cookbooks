@@ -60,10 +60,9 @@ end
 
 runit_service "nginx"
 
-# Ok this is out again...
-# service "nginx" do
-#   subscribes :restart, resources(:bash => "compile_nginx_source")
-# end
+service "nginx" do
+  subscribes :restart, resources(:bash => "compile_nginx_source"), :delayed
+end
 
 %w{ sites-available sites-enabled conf.d }.each do |dir|
   directory "#{node[:nginx][:dir]}/#{dir}" do
