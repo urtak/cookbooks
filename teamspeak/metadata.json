@@ -1,42 +1,35 @@
 {
-  "maintainer": "Opscode, Inc.",
-  "description": "Installs teamspeak and enables service",
-  "recommendations": {
+    "providing": {
+    },
+    "description": "Installs teamspeak and enables service",
+    "replacing": {
+    },
+    "recipes": {
+    },
+    "groupings": {
+    },
+    "attributes": {
+    },
+    "long_description": "",
+    "recommendations": {
+    },
+    "dependencies": {
+      "php": [
 
-  },
-  "maintainer_email": "cookbooks@opscode.com",
-  "recipes": {
-    "teamspeak": ""
-  },
-  "suggestions": {
+      ]
+    },
+    "maintainer": "Opscode, Inc.",
+    "suggestions": {
+    },
+    "platforms": {
+      "ubuntu": [
 
-  },
-  "platforms": {
-    "ubuntu": [
-
-    ]
-  },
-  "version": "0.8.0",
-  "name": "teamspeak",
-  "conflicting": {
-
-  },
-  "attributes": {
-
-  },
-  "providing": {
-    "teamspeak": [
-
-    ]
-  },
-  "license": "Apache 2.0",
-  "long_description": "",
-  "replacing": {
-
-  },
-  "dependencies": {
-    "php": [
-
-    ]
+      ]
+    },
+    "name": "teamspeak",
+    "version": "0.8.0",
+    "license": "Apache 2.0",
+    "maintainer_email": "cookbooks@opscode.com",
+    "conflicting": {
+    }
   }
-}

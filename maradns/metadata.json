@@ -1,63 +1,62 @@
 {
-  "maintainer": "Opscode, Inc.",
-  "description": "Installs and configures maradns",
-  "recommendations": {
-
-  },
-  "maintainer_email": "cookbooks@opscode.com",
-  "recipes": {
-    "maradns": ""
-  },
-  "suggestions": {
-
-  },
-  "platforms": {
-    "ubuntu": [
-
-    ],
-    "debian": [
-
-    ]
-  },
-  "version": "0.7.0",
-  "name": "maradns",
-  "conflicting": {
-
-  },
-  "attributes": {
-    "maradns\/recursive_acl": {
-      "default": "",
-      "type": "string",
-      "multiple_values": false,
-      "description": "Sets the recursive_acl setting in mararc.erb",
-      "display_name": "MaraDNS Recursive ACL",
-      "recipes": [
-
-      ],
-      "required": false
+    "providing": {
     },
-    "maradns": {
-      "type": "hash",
-      "multiple_values": false,
-      "description": "Hash of MaraDNS attributes",
-      "display_name": "MaraDNS",
-      "recipes": [
+    "description": "Installs and configures maradns",
+    "replacing": {
+    },
+    "recipes": {
+    },
+    "groupings": {
+    },
+    "attributes": {
+      "maradns": {
+        "required": "optional",
+        "calculated": false,
+        "choice": [
+
+        ],
+        "type": "hash",
+        "recipes": [
+
+        ],
+        "display_name": "MaraDNS",
+        "description": "Hash of MaraDNS attributes"
+      },
+      "maradns/recursive_acl": {
+        "required": "optional",
+        "calculated": false,
+        "choice": [
+
+        ],
+        "default": "",
+        "type": "string",
+        "recipes": [
+
+        ],
+        "display_name": "MaraDNS Recursive ACL",
+        "description": "Sets the recursive_acl setting in mararc.erb"
+      }
+    },
+    "long_description": "",
+    "recommendations": {
+    },
+    "dependencies": {
+    },
+    "maintainer": "Opscode, Inc.",
+    "suggestions": {
+    },
+    "platforms": {
+      "debian": [
 
       ],
-      "required": false
+      "ubuntu": [
+
+      ]
+    },
+    "name": "maradns",
+    "version": "0.7.0",
+    "license": "Apache 2.0",
+    "maintainer_email": "cookbooks@opscode.com",
+    "conflicting": {
     }
-  },
-  "providing": {
-    "maradns": [
-
-    ]
-  },
-  "license": "Apache 2.0",
-  "long_description": "",
-  "replacing": {
-
-  },
-  "dependencies": {
-
   }
-}

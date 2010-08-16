@@ -1,49 +1,41 @@
 {
-  "maintainer": "Opscode, Inc.",
-  "description": "Installs logrotate",
-  "recommendations": {
+    "providing": {
+    },
+    "description": "Installs logrotate",
+    "replacing": {
+    },
+    "recipes": {
+    },
+    "groupings": {
+    },
+    "attributes": {
+    },
+    "long_description": "",
+    "recommendations": {
+    },
+    "dependencies": {
+    },
+    "maintainer": "Opscode, Inc.",
+    "suggestions": {
+    },
+    "platforms": {
+      "debian": [
 
-  },
-  "maintainer_email": "cookbooks@opscode.com",
-  "recipes": {
-    "logrotate": ""
-  },
-  "suggestions": {
+      ],
+      "centos": [
 
-  },
-  "platforms": {
-    "ubuntu": [
+      ],
+      "ubuntu": [
 
-    ],
-    "centos": [
+      ],
+      "redhat": [
 
-    ],
-    "debian": [
-
-    ],
-    "redhat": [
-
-    ]
-  },
-  "version": "0.7.0",
-  "name": "logrotate",
-  "conflicting": {
-
-  },
-  "attributes": {
-
-  },
-  "providing": {
-    "logrotate": [
-
-    ]
-  },
-  "license": "Apache 2.0",
-  "long_description": "",
-  "replacing": {
-
-  },
-  "dependencies": {
-
+      ]
+    },
+    "name": "logrotate",
+    "version": "0.7.0",
+    "license": "Apache 2.0",
+    "maintainer_email": "cookbooks@opscode.com",
+    "conflicting": {
+    }
   }
-}

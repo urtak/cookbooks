@@ -1,74 +1,70 @@
 {
-  "maintainer": "Opscode, Inc.",
-  "description": "Example cookbook for quick_start wiki document",
-  "recommendations": {
+    "providing": {
+    },
+    "description": "Example cookbook for quick_start wiki document",
+    "replacing": {
+    },
+    "recipes": {
+    },
+    "groupings": {
+    },
+    "attributes": {
+      "quick_start/deep_thought": {
+        "required": "optional",
+        "calculated": false,
+        "choice": [
 
-  },
-  "maintainer_email": "cookbooks@opscode.com",
-  "recipes": {
-    "quick_start": ""
-  },
-  "suggestions": {
+        ],
+        "default": "If a tree falls in the forest...",
+        "type": "string",
+        "recipes": [
 
-  },
-  "platforms": {
-    "solaris": [
-
-    ],
-    "freebsd": [
-
-    ],
-    "ubuntu": [
-
-    ],
-    "openbsd": [
-
-    ],
-    "fedora": [
-
-    ],
-    "macosx": [
-
-    ],
-    "centos": [
-
-    ],
-    "debian": [
-
-    ],
-    "redhat": [
-
-    ]
-  },
-  "version": "0.7.0",
-  "name": "quick_start",
-  "conflicting": {
-
-  },
-  "attributes": {
-    "quick_start\/deep_thought": {
-      "default": "If a tree falls in the forest...",
-      "type": "string",
-      "multiple_values": false,
-      "description": "A deep thought",
-      "display_name": "Quick Start Deep Thought",
-      "recipes": [
+        ],
+        "display_name": "Quick Start Deep Thought",
+        "description": "A deep thought"
+      }
+    },
+    "long_description": "",
+    "recommendations": {
+    },
+    "dependencies": {
+    },
+    "maintainer": "Opscode, Inc.",
+    "suggestions": {
+    },
+    "platforms": {
+      "openbsd": [
 
       ],
-      "required": false
+      "debian": [
+
+      ],
+      "solaris": [
+
+      ],
+      "centos": [
+
+      ],
+      "fedora": [
+
+      ],
+      "macosx": [
+
+      ],
+      "freebsd": [
+
+      ],
+      "ubuntu": [
+
+      ],
+      "redhat": [
+
+      ]
+    },
+    "name": "quick_start",
+    "version": "0.7.0",
+    "license": "Apache 2.0",
+    "maintainer_email": "cookbooks@opscode.com",
+    "conflicting": {
     }
-  },
-  "providing": {
-    "quick_start": [
-
-    ]
-  },
-  "license": "Apache 2.0",
-  "long_description": "",
-  "replacing": {
-
-  },
-  "dependencies": {
-
   }
-}

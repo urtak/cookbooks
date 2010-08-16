@@ -1,45 +1,38 @@
 {
-  "maintainer": "Opscode, Inc.",
-  "description": "Installs but does not configure drbd",
-  "recommendations": {
+    "providing": {
+    },
+    "description": "Installs but does not configure drbd",
+    "replacing": {
+    },
+    "recipes": {
+    },
+    "groupings": {
+    },
+    "attributes": {
+    },
+    "long_description": "",
+    "recommendations": {
+    },
+    "dependencies": {
+      "lvm": [
 
-  },
-  "maintainer_email": "cookbooks@opscode.com",
-  "recipes": {
-    "drbd": ""
-  },
-  "suggestions": {
+      ]
+    },
+    "maintainer": "Opscode, Inc.",
+    "suggestions": {
+    },
+    "platforms": {
+      "debian": [
 
-  },
-  "platforms": {
-    "ubuntu": [
+      ],
+      "ubuntu": [
 
-    ],
-    "debian": [
-
-    ]
-  },
-  "version": "0.7.0",
-  "name": "drbd",
-  "conflicting": {
-
-  },
-  "attributes": {
-
-  },
-  "providing": {
-    "drbd": [
-
-    ]
-  },
-  "license": "Apache 2.0",
-  "long_description": "",
-  "replacing": {
-
-  },
-  "dependencies": {
-    "lvm": [
-
-    ]
+      ]
+    },
+    "name": "drbd",
+    "version": "0.7.0",
+    "license": "Apache 2.0",
+    "maintainer_email": "cookbooks@opscode.com",
+    "conflicting": {
+    }
   }
-}
